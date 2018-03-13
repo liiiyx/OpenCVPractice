@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        initView();
     }
 
     private void initView() {
@@ -68,7 +68,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION, this, mOpenCVCallBack);
+        if (!OpenCVLoader.initDebug()) {// 默认加载opencv_java.so库 
+            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION, this, mOpenCVCallBack);
+        }
     }
 
     /**
@@ -100,8 +102,6 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode) {
             case SELECT_PHOTO:
                 if (resultCode == RESULT_OK) {
-
-
                     try {
                         final Uri imageUri = data.getData();
                         final InputStream imageStream = getContentResolver().openInputStream(imageUri);
@@ -134,6 +134,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void handleMeanBlur(Mat src) {
         Imgproc.blur(src, src, new Size(3, 3));
+    }
+
+    private void handleGaussianBlur(Mat src) {
+        Imgproc.GaussianBlur(src, src, new Size(3, 3), 0);
+    }
+
+    private void handleMedianBlur(Mat src) {
+        Imgproc.medianBlur(src, src, 3);
     }
 
     private void setIvImageProcessed(Mat src, Bitmap selectedImage) {

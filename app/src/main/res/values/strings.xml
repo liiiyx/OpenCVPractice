@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">OpenCVPractice</string>
     
-    <string name="加载图片">action_load_image</string>
+    <string name="action_load_image">加载图片</string>
 </resources>

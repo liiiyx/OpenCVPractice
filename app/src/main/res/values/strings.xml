@@ -2,4 +2,10 @@
     <string name="app_name">OpenCVPractice</string>
     
     <string name="action_load_image">加载图片</string>
+    <string name="action_custom_sharpen">自定义核锐化</string>
+    <string name="action_dilate">膨胀测试</string>
+    <string name="action_erode">腐蚀测试</string>
+    <string name="action_dog">高斯模糊求边缘</string>
+    <string name="action_harris_corner">Harris角点检测</string>
+    <string name="action_hough_lines">霍夫直线</string>
 </resources>

@@ -3,7 +3,24 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/action_load_image"
-          android:title="@string/action_load_image"
-          android:orderInCategory="1"
-          app:showAsAction="ifRoom"/>
+          android:title="@string/action_load_image"/>
+
+    <item android:id="@+id/action_custom_sharpen"
+          android:title="@string/action_custom_sharpen"/>
+
+    <item android:id="@+id/action_dilate"
+          android:title="@string/action_dilate"/>
+
+    <item android:id="@+id/action_erode"
+          android:title="@string/action_erode"/>
+
+    <item android:id="@+id/action_dog"
+          android:title="@string/action_dog"/>
+
+    <item android:id="@+id/action_harris_corner"
+          android:title="@string/action_harris_corner"/>
+
+    <item android:id="@+id/action_hough_lines"
+          android:title="@string/action_hough_lines"/>
+
 </menu>
